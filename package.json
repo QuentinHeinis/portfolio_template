@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.0",
     "aos": "^2.3.4",
     "firebase": "^9.16.0",
     "vue": "^3.2.45",

@@ -6,20 +6,19 @@ import { onMounted, ref } from "vue";
 let data = ref([])
 onMounted(async () => {
     const firestore = getFirestore()
-    const querySnapshot = await getDocs(collection(firestore, "projets"));
+    const querySnapshot = await getDocs(collection(firestore, "logos"));
     querySnapshot.forEach((doc) => {
         data.value.push({ id: doc.id, ...doc.data() })
     });
     for (let i = 0; i < data.value.length; i++) {
         const storage = getStorage();
-        for (let j = 0; j < data.value[i].images.length; j++) {
-            const spaceRef = fref(storage, data.value[i].images[j]);
-            await getDownloadURL(spaceRef)
-                .then((url) => {
-                    data.value[i].images[j] = url;
-                    console.log(url)
-                })
-        }
+        const spaceRef = fref(storage, data.value[i].image);
+        await getDownloadURL(spaceRef)
+            .then((url) => {
+                data.value[i].image = url;
+                console.log(url)
+            })
+
     }
 })
 const logout = () => {
@@ -34,19 +33,17 @@ const removeproject = async (projet) => {
     if (window.confirm('Tu es sur le point de supprimer le projet ' + projet.nom)) {
 
         const firestore = getFirestore();
-        await deleteDoc(doc(firestore, "projets", projet.id));
+        await deleteDoc(doc(firestore, "logos", projet.id));
         const storage = getStorage();
-        for (let i = 0; i < projet.images.length; i++) {
-            let docRef = fref(storage, projet.images[i]);
-            await deleteObject(docRef);
-        }
+        let docRef = fref(storage, projet.image);
+        await deleteObject(docRef);
         window.location.reload()
     }
 }
 
 const setIshomepage = async (id, value) => {
     const firestore = getFirestore();
-    await updateDoc(doc(firestore, "projets", id), {
+    await updateDoc(doc(firestore, "logos", id), {
         IsHomepage: value
     })
 }
@@ -55,16 +52,16 @@ const setIshomepage = async (id, value) => {
 <template>
     <div class="w-4/5 bg-gray-300 text-black flex mx-auto p-4 overflow-x-scroll mt-10">
         <button @click="logout" class="absolute top-3 right-10 text-white">Log out</button>
+
         <div class="flex flex-col">
-            <RouterLink to="/admin/add" class="mb-4">ajouter</RouterLink>
+            <h1 class="text-center text-2xl">Projet</h1>
+            <RouterLink to="/admin/addL" class="mb-4">ajouter</RouterLink>
             <table className='mx-auto max-w-full'>
                 <thead className='h-14'>
                     <tr>
                         <td className='border border-black w-28 text-center'>Nom</td>
-                        <td className='border border-black w-28 text-center'>Softwares</td>
-                        <td className='border border-black w-28 text-center'>Année</td>
-                        <td className='border border-black w-28 text-center'>Tags</td>
-                        <td className='border border-black w-28 text-center'>Description</td>
+                        <td className='border border-black w-28 text-center'>SmallDesc</td>
+                        <td className='border border-black w-28 text-center'>LargeDesc</td>
                         <td className='border border-black w-28 text-center'>Images</td>
                         <td className='border border-black w-28 text-center'>IsHomepage?</td>
                         <td className='border border-black w-28 text-center'>Edit</td>
@@ -72,19 +69,13 @@ const setIshomepage = async (id, value) => {
                 </thead>
                 <tbody>
                     <tr v-for="projet in data" :key="projet.id">
-                        <td className='border border-black w-28 text-center'>{{ projet.nom }}</td>
+                        <td className='border border-black w-28 text-center'>{{ projet.numero }}</td>
+                        <td className='border border-black w-28 text-center'>{{ projet.smallDesc }}</td>
                         <td className='border border-black w-28 text-center'>
-                            <p v-for="software in projet.softwares">{{ software }}</p>
-                        </td>
-                        <td className='border border-black w-28 text-center'>{{ projet.year }}</td>
-                        <td className='border border-black w-28 text-center'>
-                            <p v-for="tag in projet.tags">{{ tag }}</p>
+                            <p v-for="para in projet.largeDesc.split('\\n')">{{ para }}</p>
                         </td>
                         <td className='border border-black w-28 text-center'>
-                            <p v-for="para in projet.desc.split('\\n')">{{ para }}</p>
-                        </td>
-                        <td className='border border-black w-28 text-center'>
-                            <img v-for="image in projet.images" :src="image" :alt="'photo de ' + projet.nom">
+                            <img :src="projet.image" :alt="'photo de ' + projet.numero">
                         </td>
                         <td className='border border-black w-28 text-center'>
                             <input type="checkbox" v-model="projet.IsHomepage"

@@ -29,7 +29,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="border-b pb-10 mb-10">
+  <div class="border-b pb-10 mb-10 relative">
+    <span class="absolute top-1/3 left-2/3 h-32 w-32 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
+      data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="2000"></span>
+    <span class="absolute top-2/3 left-1/3 h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"
+      data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="2000"></span>
     <h1 class="flex flex-col text-9xl uppercase font-semibold">
       <span class="flex" data-aos="zoom-in-left" data-aos-duration="2000">Web design</span>
       <span class="flex items-center -mt-10" data-aos="zoom-in-left" data-aos-delay="150" data-aos-duration="2000">Graphic
@@ -63,8 +67,8 @@ onMounted(async () => {
       </div>
     </div>
   </div>
-  <div>
-    <div class="flex uppercase gap-20">
+  <div class="border-b pb-10 mb-10 relative">
+    <div class="flex uppercase gap-20" data-aos="fade-right" data-aos-duration="1500">
       <div class="flex flex-col">
         <p>You can also see my other</p>
         <p>project in the "projects" tab</p>
@@ -81,8 +85,15 @@ onMounted(async () => {
         <p>section are from 2022 & 2023</p>
       </div>
     </div>
+    <span class="absolute top-1/4 left-2/3 h-32 w-32 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
+      data-aos="zoom-in-left" data-aos-delay="150" data-aos-duration="1500"></span>
+    <span class="absolute top-2/3 left-[40%] h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"
+      data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1500"></span>
+    <h2 class="text-[12rem] uppercase leading-none text-end flex flex-col" data-aos="fade-left" data-aos-duration="1500">
+      Selected <span>Projects</span>
+    </h2>
   </div>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-6">
     <Homecards v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.images[0]" :id="projet.id" />
     <Homecards v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.images[0]" :id="projet.id" />
   </div>
