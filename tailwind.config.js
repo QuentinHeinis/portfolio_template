@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       fontFamily: {
 
+      },
+      colors:{
+        zblack: "#272727"
       }
     },
   },
