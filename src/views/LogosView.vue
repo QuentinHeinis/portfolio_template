@@ -1,0 +1,40 @@
+<script setup>
+import { collection, getDocs, getFirestore, query } from '@firebase/firestore';
+import { getDownloadURL, getStorage, ref as fref } from '@firebase/storage';
+import { onMounted, ref } from 'vue';
+let data = ref([])
+onMounted(async () => {
+    const firestore = getFirestore()
+    let q = query(collection(firestore, "logos"))
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        data.value.push({ id: doc.id, ...doc.data() })
+    });
+    for (let i = 0; i < data.value.length; i++) {
+        const storage = getStorage();
+        const spaceRef = fref(storage, data.value[i].image);
+        await getDownloadURL(spaceRef)
+            .then((url) => {
+                data.value[i].image = url;
+            })
+    }
+    console.log(data.value)
+})
+</script>
+<template>
+    <div class="border-b ">
+        <h1 class="uppercase text-9xl w-1/2 ml-auto text-end">All my Logos</h1>
+        <div class="flex items-center -mt-10">
+            <img src="/Flower.svg" alt="" class="object-contain h-14">
+            <img src="/sun.svg" alt="" class="object-contain h-14">
+        </div>
+        <div v-for="logo in data" class="w-full h-[28rem] border-t mt-10 flex justify-between gap-9 py-8">
+            <div class="flex flex-col w-1/2 justify-end gap-4 ">
+                <h2 class="text-7xl uppercase">{{ logo.nom }}</h2>
+            </div>
+            <div class="w-2/5">
+                <img :src="logo.image" alt="" class="object-contain w-full h-full">
+            </div>
+        </div>
+    </div>
+</template>

@@ -30,7 +30,7 @@ const logout = () => {
     });
 }
 const removeproject = async (projet) => {
-    if (window.confirm('Tu es sur le point de supprimer le projet ' + projet.nom)) {
+    if (window.confirm('Tu es sur le point de supprimer le projet ' + projet.num)) {
 
         const firestore = getFirestore();
         await deleteDoc(doc(firestore, "logos", projet.id));
@@ -60,6 +60,7 @@ const setIshomepage = async (id, value) => {
                 <thead className='h-14'>
                     <tr>
                         <td className='border border-black w-28 text-center'>Nom</td>
+                        <td className='border border-black w-28 text-center'>Numero</td>
                         <td className='border border-black w-28 text-center'>SmallDesc</td>
                         <td className='border border-black w-28 text-center'>LargeDesc</td>
                         <td className='border border-black w-28 text-center'>Images</td>
@@ -69,6 +70,7 @@ const setIshomepage = async (id, value) => {
                 </thead>
                 <tbody>
                     <tr v-for="projet in data" :key="projet.id">
+                        <td className='border border-black w-28 text-center'>{{ projet.nom }}</td>
                         <td className='border border-black w-28 text-center'>{{ projet.numero }}</td>
                         <td className='border border-black w-28 text-center'>{{ projet.smallDesc }}</td>
                         <td className='border border-black w-28 text-center'>

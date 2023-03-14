@@ -55,27 +55,28 @@ onMounted(async () => {
         <img src="/QanticLogo.png" class="h-28" />s</span>
       <span class="flex" data-aos="fade-up" data-aos-delay="450" data-aos-duration="2000">Product</span>
     </h1>
-    <div class="flex" >
+    <div class="flex">
       <div class="flex uppercase gap-7 text-xs">
         <div class="flex flex-col" data-aos="fade-right" data-aos-delay="600" data-aos-duration="2000">
           <p>French graphic designer</p>
           <p>Based in France</p>
           <p>Montbéliard</p>
         </div>
-        <div class="flex flex-col" data-aos="fade-right" data-aos-delay="750" data-aos-duration="2000">
+        <div class="flex flex-col" data-aos="fade-right" data-aos-delay="1600" data-aos-duration="2000">
           <p>19 years old designer still</p>
           <p>studying for a diploma</p>
           <p>hoping to do a master in visuel</p>
           <p>and branding identity</p>
         </div>
-        <div class="flex flex-col" data-aos="fade-right" data-aos-delay="900" data-aos-duration="2000">
+        <div class="flex flex-col" data-aos="fade-right" data-aos-delay="2600" data-aos-duration="2000">
           <p>Experienced in adobe</p>
           <p>photoshop, illustrator,</p>
           <p>indesign, audition, XD,</p>
           <p>premiere, figma</p>
         </div>
       </div>
-      <div class="text-9xl -mt-8 uppercase font-semibold" data-aos="fade-left" data-aos-delay="1050" data-aos-duration="2000">
+      <div class="text-9xl -mt-8 uppercase font-semibold" data-aos="fade-left" data-aos-delay="1050"
+        data-aos-duration="2000">
         Design
       </div>
     </div>
@@ -89,8 +90,8 @@ onMounted(async () => {
         <p>found all around the website</p>
         <p>make sure to look at it !</p>
         <div class="flex items-center">
-          <img src="/Flower.png" alt="">
-          <img src="/Flower.png" alt="" class="h-1/2">
+          <img src="/Flower.svg" alt="" class="h-14">
+          <img src="/sun.svg" alt="" class="h-14">
         </div>
       </div>
       <div class="flex flex-col" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1500">
@@ -111,27 +112,40 @@ onMounted(async () => {
       :id="projet.id" />
   </div>
   <div class="pb-10 mb-10 relative">
-    <span
-      class="absolute top-1/4 left-1/3 h-28 w-28 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "></span>
-    <span
-      class="absolute top-3/4 left-[40%] h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"></span>
-    <h2 class="text-[12rem] uppercase leading-none flex flex-col">
+    <span class="absolute top-1/4 left-1/3 h-28 w-28 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
+      data-aos="zoom-in-right" data-aos-delay="300" data-aos-duration="2000"></span>
+    <span class="absolute top-3/4 left-[40%] h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"
+      data-aos="zoom-in-right" data-aos-delay="600" data-aos-duration="2000"></span>
+    <h2 class="text-[12rem] uppercase leading-none flex flex-col" data-aos="fade-right" data-aos-duration="2000">
       Selected <span>Logos</span>
     </h2>
-    <div class="flex flex-col items-end w-4/5 mx-auto -mt-20">
+    <div class="flex flex-col items-end w-4/5 mx-auto -mt-20" data-aos="fade-left" data-aos-delay="200"
+      data-aos-duration="2000">
       <div class="w-1/2 ">
         <p>IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO PRODUCE OTHER DESIGNS USING ADOBE
           ILLUSTRATOR TO SHOWCASE THE IDEAS AND CONCEPTS OF A BUSINESS, INDIVIDUAL, OR AS AN EXTENSION OF PROJECTS.</p>
-        <div class="flex">
-          <img src="/Flower.png" alt="">
-          <img src="/sun.png" alt="">
+        <div class="flex items-center">
+          <img src="/Flower.svg" alt="" class="h-14">
+          <img src="/sun.svg" alt="" class="h-14">
         </div>
       </div>
 
     </div>
   </div>
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 pb-20 border-b ">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 mb-10">
     <HomeCardLogo v-for="logo in logos" :num="logo.numero" :image="logo.image" :smallDesc="logo.smallDesc" :id="logo.id"
-      :largeDesc="logo.largeDesc" data-aos="fade-up" />
+      :largeDesc="logo.largeDesc" data-aos="fade-up" data-aos-duration="2000" />
+  </div>
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 pb-20 border-b ">
+    <p class="w-2/3" data-aos="fade-up" data-aos-duration="2000">THOSE LOGOS ARE FROM 2022 AND 2023 ONLY, I DID NOT
+      DISPLAY ANYTHING BEFORE THAT</p>
+    <p class="w-2/3 flex flex-col gap-2" data-aos="fade-up" data-aos-delay="600" data-aos-duration="2000">MOST OF THOSE
+      LOGOS ARE FOR
+      SCHOOL PROJECT OR PERSONAL PROJECT
+      <span>THEY ONLY SERVE THE PURPOSE
+        OF EXHIBITION</span>
+    </p>
+    <p class="w-2/3" data-aos="fade-up" data-aos-delay="1200" data-aos-duration="2000">EVEN IF THOSE LOGO ARE ONLY FOR
+      PERSONAL PURPOSE I OWN THEM</p>
   </div>
 </template>

@@ -15,7 +15,7 @@
             <a href="mailto:bourezg.eden@gmail.com" class="text-center w-1/3">Mail</a>
             <p class=" w-1/3 text-end normal-case">bourezg.eden@gmail.com</p>
         </div>
-        <div class="flex justify-between pt-5 text-4xl uppercase" >
+        <div class="flex justify-between pt-5 text-lg uppercase" >
             <p>Copyright &copy; Bourezg Eden</p>
             <p>2023</p>
         </div>

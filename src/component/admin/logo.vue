@@ -6,6 +6,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const imagesData = ref()
 const num = ref()
+const nom = ref()
 const largeDesc = ref()
 const smallDesc = ref()
 
@@ -30,6 +31,7 @@ const upload = async () => {
     let projet = {
         image: imagesPath,
         numero: num.value,
+        nom: nom.value,
         largeDesc: largeDesc.value,
         smallDesc: smallDesc.value,
         IsHomepage: false
@@ -42,6 +44,8 @@ const upload = async () => {
 </script>
 <template>
     <form class="flex flex-col w-4/5 md:w-1/2 mt-10 mx-auto gap-4">
+        <label>Nom : </label>
+        <input required class="text-black" type="text" v-model="nom">
         <label>Numéro : </label>
         <input required class="text-black" type="text" v-model="num">
         <label>largeDesc : </label>
