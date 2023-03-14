@@ -11,34 +11,31 @@ const smallDesc = ref()
 
 const SetImagesData = (e) => {
     const files = e.target.files
-    let images = null
     var reader = new FileReader()
     reader.onload = (e) => {
-        images = e.target.result
+        imagesData.value = e.target.result
     }
-    reader.readAsDataURL(files)
-    imagesData.value = images
+    reader.readAsDataURL(files[0])
+
 }
 
 
 const upload = async () => {
     let imagesPath = []
     const storage = getStorage()
-    const refStorage = fref(storage, `${num.value}/` + num.value + 'logo')
-    await uploadString(refStorage, imagesData.value[i], 'data_url').then((snapshot) => {
+    const refStorage = fref(storage, 'logos/' + num.value)
+    await uploadString(refStorage, imagesData.value, 'data_url').then((snapshot) => {
         imagesPath = snapshot.metadata.fullPath
     })
     let projet = {
-        images: imagesPath,
-        desc: desc.value.replace("\n", "\\n"),
-        nom: nom.value,
-        softwares: softwares.value.split('\n'),
-        year: year.value,
-        tags: tags.value.split('\n'),
-        link: link.value
+        image: imagesPath,
+        numero: num.value,
+        largeDesc: largeDesc.value,
+        smallDesc: smallDesc.value,
+        IsHomepage: false
     }
     const db = getFirestore();
-    const docRef = await addDoc(collection(db, 'projets'), projet);
+    const docRef = await addDoc(collection(db, 'logos'), projet);
     router.push('/admin')
 }
 

@@ -54,7 +54,7 @@ const setIshomepage = async (id, value) => {
         <button @click="logout" class="absolute top-3 right-10 text-white">Log out</button>
 
         <div class="flex flex-col">
-            <h1 class="text-center text-2xl">Projet</h1>
+            <h1 class="text-center text-2xl">Logos</h1>
             <RouterLink to="/admin/addL" class="mb-4">ajouter</RouterLink>
             <table className='mx-auto max-w-full'>
                 <thead className='h-14'>
