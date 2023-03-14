@@ -46,43 +46,43 @@ onMounted(async () => {
     <span class="absolute top-1/3 left-2/3 h-32 w-32 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
       data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="2000"></span>
     <span class="absolute top-2/3 left-1/3 h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"
-      data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="2000"></span>
+      data-aos="zoom-in-left" data-aos-delay="400" data-aos-duration="2000"></span>
     <h1 class="flex flex-col text-9xl uppercase font-semibold">
-      <span class="flex" data-aos="zoom-in-left" data-aos-duration="2000">Web design</span>
-      <span class="flex items-center -mt-10" data-aos="zoom-in-left" data-aos-delay="150" data-aos-duration="2000">Graphic
+      <span class="flex" data-aos="fade-up" data-aos-duration="2000">Web design</span>
+      <span class="flex items-center -mt-10" data-aos="fade-up" data-aos-delay="150" data-aos-duration="2000">Graphic
         d<img src="/ball.png" class="-mx-12 h-56" />sign</span>
-      <span class="flex items-center -mt-10" data-aos="zoom-in-left" data-aos-delay="300" data-aos-duration="2000">Log
+      <span class="flex items-center -mt-10" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">Log
         <img src="/QanticLogo.png" class="h-28" />s</span>
-      <span class="flex" data-aos="zoom-in-left" data-aos-delay="450" data-aos-duration="2000">Product</span>
+      <span class="flex" data-aos="fade-up" data-aos-delay="450" data-aos-duration="2000">Product</span>
     </h1>
-    <div class="flex" data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="2000">
-      <div class="flex uppercase gap-20">
-        <div class="flex flex-col">
+    <div class="flex" >
+      <div class="flex uppercase gap-7 text-xs">
+        <div class="flex flex-col" data-aos="fade-right" data-aos-delay="600" data-aos-duration="2000">
           <p>French graphic designer</p>
           <p>Based in France</p>
           <p>Montbéliard</p>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col" data-aos="fade-right" data-aos-delay="750" data-aos-duration="2000">
           <p>19 years old designer still</p>
           <p>studying for a diploma</p>
           <p>hoping to do a master in visuel</p>
           <p>and branding identity</p>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col" data-aos="fade-right" data-aos-delay="900" data-aos-duration="2000">
           <p>Experienced in adobe</p>
           <p>photoshop, illustrator,</p>
-          <p>indesign, audition, XD, premiere,</p>
-          <p>figma</p>
+          <p>indesign, audition, XD,</p>
+          <p>premiere, figma</p>
         </div>
       </div>
-      <div class="text-9xl -mt-8 uppercase font-semibold">
+      <div class="text-9xl -mt-8 uppercase font-semibold" data-aos="fade-left" data-aos-delay="1050" data-aos-duration="2000">
         Design
       </div>
     </div>
   </div>
   <div class="border-b pb-10 mb-10 relative w-full overflow-hidden">
-    <div class="flex uppercase gap-20" data-aos="fade-right" data-aos-duration="1500">
-      <div class="flex flex-col">
+    <div class="flex uppercase gap-20">
+      <div class="flex flex-col" data-aos="fade-right" data-aos-duration="1500">
         <p>You can also see my other</p>
         <p>project in the "projects" tab</p>
         <p class="mt-2">my other creation can be</p>
@@ -93,7 +93,7 @@ onMounted(async () => {
           <img src="/Flower.png" alt="" class="h-1/2">
         </div>
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1500">
         <p>the projects present in this</p>
         <p>section are from 2022 & 2023</p>
       </div>
@@ -107,8 +107,6 @@ onMounted(async () => {
     </h2>
   </div>
   <div class="flex flex-col gap-6 mb-6">
-    <HomeCardProjet v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.imagePres"
-      :id="projet.id" />
     <HomeCardProjet v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.imagePres"
       :id="projet.id" />
   </div>
@@ -132,8 +130,8 @@ onMounted(async () => {
 
     </div>
   </div>
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] w-4/5 mx-auto gap-10 pb-6 border-b ">
-    <HomeCardLogo v-for="logo in logos" :num="logo.numero" :image="logo.image" :smallDesc="logo.smallDesc" :id="logo.id" :largeDesc="logo.largeDesc"/>
-    <HomeCardLogo v-for="logo in logos" :num="logo.numero" :image="logo.image" :smallDesc="logo.smallDesc" :id="logo.id" :largeDesc="logo.largeDesc"/>
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 pb-20 border-b ">
+    <HomeCardLogo v-for="logo in logos" :num="logo.numero" :image="logo.image" :smallDesc="logo.smallDesc" :id="logo.id"
+      :largeDesc="logo.largeDesc" data-aos="fade-up" />
   </div>
 </template>

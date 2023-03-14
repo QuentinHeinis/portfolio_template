@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue';
+
 
 defineProps({
     image: String,
@@ -7,11 +9,12 @@ defineProps({
     largeDesc: String,
     id: String
 })
+let show = ref(false)
 </script>
 
 <template>
-    <div class="flex flex-col max-w-sm">
-        <div class="text-white border-l-2 h-60 gap-12 flex justify-between">
+    <div class="flex flex-col max-w-sm ">
+        <div class="text-white border-l-2 h-60 gap-12 flex justify-between relative">
             <div class="flex flex-col justify-between pl-4 ">
                 <p class="text-2xl">{{ num }}</p>
                 <div class="h-32">
@@ -21,7 +24,9 @@ defineProps({
             <div class="w-1/2">
                 <p class="text-end">{{ smallDesc }}</p>
             </div>
+            <div class="absolute top-[90%] right-0 text-2xl cursor-pointer" @click="show = !show" v-if="!show">+</div>
+            <div class="absolute top-[90%] right-0 text-2xl cursor-pointer" @click="show = !show" v-if="show">-</div>
         </div>
-        <div class="max-w-lg">{{ largeDesc }}</div>
+        <div v-if="show" class="max-w-lg py-3 border-b-2">{{ largeDesc }}</div>
     </div>
 </template>
