@@ -26,8 +26,8 @@
     position: absolute;
     background: white;
     display: block;
-    width: 100%;
     left: 0;
+    width: 100%;
     border-radius: 0.5rem;
     height: 2px;
     z-index: -1;
@@ -38,11 +38,6 @@
 }
 
 .hover__effect:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-a.router-link-exact-active::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
