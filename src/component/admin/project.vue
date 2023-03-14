@@ -5,6 +5,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const imagesData = ref([])
+const imagePresData = ref()
 const desc = ref()
 const softwares = ref()
 const year = ref()
@@ -24,10 +25,19 @@ const SetImagesData = (e) => {
     }
     imagesData.value = images
 }
+const SetImagePresData = (e) => {
+    const files = e.target.files
+    var reader = new FileReader()
+    reader.onload = (e) => {
+        imagePresData.value = e.target.result
+    }
+    reader.readAsDataURL(files[0])
+}
 
 
 const upload = async () => {
     let imagesPath = []
+    let imagePresPath = null
     const storage = getStorage()
     let i = 0
     for (let i = 0; i < imagesData.value.length; i++) {
@@ -36,8 +46,13 @@ const upload = async () => {
             imagesPath.push(snapshot.metadata.fullPath)
         })
     }
+    const refStorage = fref(storage, `${nom.value}/` + nom.value + 'Pres')
+    await uploadString(refStorage, imagePresData.value, 'data_url').then((snapshot) => {
+        imagePresPath = snapshot.metadata.fullPath
+    })
     let projet = {
         images: imagesPath,
+        imagePres: imagePresPath,
         desc: desc.value.replace("\n", "\\n"),
         nom: nom.value,
         softwares: softwares.value.split('\n'),
@@ -67,6 +82,8 @@ const upload = async () => {
         <textarea required class="text-black" v-model="tags"></textarea>
         <label>Images :</label>
         <input required type="file" accept='image/png,image/jpeg,image/webp,image/gif' multiple @change="SetImagesData">
+        <label>Image Pres :</label>
+        <input required type="file" accept='image/png,image/jpeg,image/webp,image/gif'  @change="SetImagePresData">
         <button class="bg-blue-300 h-10 rounded-full" @click.prevent="upload">Ajouter</button>
     </form>
 </template>

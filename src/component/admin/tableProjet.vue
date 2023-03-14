@@ -17,9 +17,19 @@ onMounted(async () => {
             await getDownloadURL(spaceRef)
                 .then((url) => {
                     data.value[i].images[j] = url;
-                    console.log(url)
                 })
         }
+    }
+    for (let i = 0; i < data.value.length; i++) {
+        const storage = getStorage();
+
+        const spaceRef = fref(storage, data.value[i].imagePres);
+        await getDownloadURL(spaceRef)
+            .then((url) => {
+                data.value[i].imagePres = url;
+                console.log(url)
+            })
+
     }
 })
 const logout = () => {
@@ -68,6 +78,7 @@ const setIshomepage = async (id, value) => {
                         <td className='border border-black w-28 text-center'>Tags</td>
                         <td className='border border-black w-28 text-center'>Description</td>
                         <td className='border border-black w-28 text-center'>Images</td>
+                        <td className='border border-black w-28 text-center'>Pres</td>
                         <td className='border border-black w-28 text-center'>IsHomepage?</td>
                         <td className='border border-black w-28 text-center'>Edit</td>
                     </tr>
@@ -87,6 +98,9 @@ const setIshomepage = async (id, value) => {
                         </td>
                         <td className='border border-black w-28 text-center'>
                             <img v-for="image in projet.images" :src="image" :alt="'photo de ' + projet.nom">
+                        </td>
+                        <td className='border border-black w-28 text-center'>
+                            <img :src="projet.imagePres" :alt="'photo de ' + projet.nom">
                         </td>
                         <td className='border border-black w-28 text-center'>
                             <input type="checkbox" v-model="projet.IsHomepage"

@@ -18,13 +18,11 @@ onMounted(async () => {
   });
   for (let i = 0; i < data.value.length; i++) {
     const storage = getStorage();
-    for (let j = 0; j < data.value[i].images.length; j++) {
-      const spaceRef = fref(storage, data.value[i].images[j]);
-      await getDownloadURL(spaceRef)
-        .then((url) => {
-          data.value[i].images[j] = url;
-        })
-    }
+    const spaceRef = fref(storage, data.value[i].imagePres);
+    await getDownloadURL(spaceRef)
+      .then((url) => {
+        data.value[i].imagePres = url;
+      })
   }
   q = query(collection(firestore, "logos"), where("IsHomepage", "==", true))
   const querySnapshotL = await getDocs(q);
@@ -109,9 +107,9 @@ onMounted(async () => {
     </h2>
   </div>
   <div class="flex flex-col gap-6 mb-6">
-    <HomeCardProjet v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.images[0]"
+    <HomeCardProjet v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.imagePres"
       :id="projet.id" />
-    <HomeCardProjet v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.images[0]"
+    <HomeCardProjet v-for="projet in data" :nom="projet.nom" :tags="projet.tags" :image="projet.imagePres"
       :id="projet.id" />
   </div>
   <div class="pb-10 mb-10 relative">
