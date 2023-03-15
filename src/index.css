@@ -7,7 +7,7 @@
 
 
 #app {
-    @apply bg-zblue font-helveticaNeue;
+    @apply bg-zblack font-helveticaNeue;
     cursor: none;
 }
 

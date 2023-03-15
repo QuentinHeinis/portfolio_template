@@ -11,7 +11,7 @@ module.exports = {
         helveticaNeueThin: "HelveticaNeueThin, sans-serif",
       },
       colors: {
-        zblue: "#23272D"
+        zblack: "#272727"
       },
       cursor: {
         'pointer': 'none',
