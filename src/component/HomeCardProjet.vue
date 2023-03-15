@@ -33,7 +33,7 @@ defineProps({
                 <span aria-hidden class="text-9xl ml-20 uppercase">{{ nom }}</span>
             </div>
             <div class="flex gap-4">
-                <p v-for="tag in tags" class="px-4 py-2 border border-white rounded-full leading-none uppercase">{{ tag }}
+                <p v-for="tag in tags" class="px-4 py-2 border border-white rounded-full leading-none uppercase font-helveticaNeueThin">{{ tag }}
                 </p>
             </div>
         </div>

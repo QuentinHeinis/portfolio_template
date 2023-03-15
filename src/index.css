@@ -1,8 +1,11 @@
+@import url('./fonts/stylesheet.css');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 #app {
-    @apply bg-zblack;
+    @apply bg-zblack font-helveticaNeue;
 }

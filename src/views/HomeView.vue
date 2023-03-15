@@ -43,9 +43,9 @@ onMounted(async () => {
 
 <template>
   <div class="border-b pb-10 mb-10 relative">
-    <span class="absolute top-1/3 left-2/3 h-32 w-32 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
+    <span class="absolute top-1/4 left-2/3 h-32 w-32 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full "
       data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="2000"></span>
-    <span class="absolute top-2/3 left-1/3 h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"
+    <span class="absolute top-1/3 left-1/4 h-24 w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full"
       data-aos="zoom-in-left" data-aos-delay="400" data-aos-duration="2000"></span>
     <h1 class="flex flex-col text-9xl uppercase font-semibold">
       <span class="flex" data-aos="fade-up" data-aos-duration="2000">Web design</span>
@@ -56,7 +56,7 @@ onMounted(async () => {
       <span class="flex" data-aos="fade-up" data-aos-delay="450" data-aos-duration="2000">Product</span>
     </h1>
     <div class="flex">
-      <div class="flex uppercase gap-7 text-xs">
+      <div class="flex uppercase gap-7 text-xs font-helveticaNeueThin">
         <div class="flex flex-col" data-aos="fade-right" data-aos-delay="600" data-aos-duration="2000">
           <p>French graphic designer</p>
           <p>Based in France</p>
@@ -82,16 +82,16 @@ onMounted(async () => {
     </div>
   </div>
   <div class="border-b pb-10 mb-10 relative w-full overflow-hidden">
-    <div class="flex uppercase gap-20">
+    <div class="flex uppercase gap-20 text-xs font-helveticaNeueThin">
       <div class="flex flex-col" data-aos="fade-right" data-aos-duration="1500">
         <p>You can also see my other</p>
         <p>project in the "projects" tab</p>
         <p class="mt-2">my other creation can be</p>
         <p>found all around the website</p>
         <p>make sure to look at it !</p>
-        <div class="flex items-center">
-          <img src="/Flower.svg" alt="" class="h-14">
-          <img src="/sun.svg" alt="" class="h-14">
+        <div class="flex items-center gap-4 mt-4">
+          <img src="/Flower.svg" alt="" class="h-8 ">
+          <img src="/sun.svg" alt="" class="h-8">
         </div>
       </div>
       <div class="flex flex-col" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1500">
@@ -99,9 +99,9 @@ onMounted(async () => {
         <p>section are from 2022 & 2023</p>
       </div>
     </div>
-    <span class="absolute top-1/4 left-2/3 h-32 w-32 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
+    <span class="absolute top-1/4 left-2/3 h-32 w-32 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full "
       data-aos="zoom-in-left" data-aos-delay="150" data-aos-duration="1500"></span>
-    <span class="absolute top-2/3 left-[40%] h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"
+    <span class="absolute top-2/3 left-[40%] h-24 w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full"
       data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1500"></span>
     <h2 class="text-[12rem] uppercase leading-none text-end flex flex-col" data-aos="fade-left" data-aos-duration="1500">
       Selected <span>Projects</span>
@@ -114,8 +114,6 @@ onMounted(async () => {
   <div class="pb-10 mb-10 relative">
     <span class="absolute top-1/4 left-1/3 h-28 w-28 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
       data-aos="zoom-in-right" data-aos-delay="300" data-aos-duration="2000"></span>
-    <span class="absolute top-3/4 left-[40%] h-24 w-24 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full"
-      data-aos="zoom-in-right" data-aos-delay="600" data-aos-duration="2000"></span>
     <h2 class="text-[12rem] uppercase leading-none flex flex-col" data-aos="fade-right" data-aos-duration="2000">
       Selected <span>Logos</span>
     </h2>
@@ -124,19 +122,19 @@ onMounted(async () => {
       <div class="w-1/2 ">
         <p>IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO PRODUCE OTHER DESIGNS USING ADOBE
           ILLUSTRATOR TO SHOWCASE THE IDEAS AND CONCEPTS OF A BUSINESS, INDIVIDUAL, OR AS AN EXTENSION OF PROJECTS.</p>
-        <div class="flex items-center">
-          <img src="/Flower.svg" alt="" class="h-14">
-          <img src="/sun.svg" alt="" class="h-14">
-        </div>
+          <div class="flex items-center gap-4 mt-4">
+            <img src="/Flower.svg" alt="" class="h-8 ">
+            <img src="/sun.svg" alt="" class="h-8">
+          </div>
       </div>
 
     </div>
   </div>
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 mb-10">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 mb-10 text-xs">
     <HomeCardLogo v-for="logo in logos" :num="logo.numero" :image="logo.image" :smallDesc="logo.smallDesc" :id="logo.id"
       :largeDesc="logo.largeDesc" data-aos="fade-up" data-aos-duration="2000" />
   </div>
-  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 pb-20 border-b ">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mx-auto gap-10 pb-20 border-b text-xs font-helveticaNeueThin">
     <p class="w-2/3" data-aos="fade-up" data-aos-duration="2000">THOSE LOGOS ARE FROM 2022 AND 2023 ONLY, I DID NOT
       DISPLAY ANYTHING BEFORE THAT</p>
     <p class="w-2/3 flex flex-col gap-2" data-aos="fade-up" data-aos-delay="600" data-aos-duration="2000">MOST OF THOSE

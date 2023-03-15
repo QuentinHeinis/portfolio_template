@@ -13,10 +13,10 @@ let show = ref(false)
 </script>
 
 <template>
-    <div class="flex flex-col max-w-sm ">
+    <div class="flex flex-col max-w-sm font-helveticaNeueThin uppercase">
         <div class="text-white border-l-2 h-60 gap-12 flex justify-between relative">
             <div class="flex flex-col justify-between pl-4 ">
-                <p class="text-2xl">{{ num }}</p>
+                <p class="text-2xl font-helveticaNeue">{{ num }}</p>
                 <div class="h-32">
                     <img :src="image" alt="" class="h-full w-full object-contain">
                 </div>

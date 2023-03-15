@@ -23,10 +23,10 @@ onMounted(async () => {
 </script>
 <template>
     <div class="border-b ">
-        <h1 class="uppercase text-9xl w-1/2 ml-auto text-end">All my Logos</h1>
-        <div class="flex items-center -mt-10">
-            <img src="/Flower.svg" alt="" class="object-contain h-14">
-            <img src="/sun.svg" alt="" class="object-contain h-14">
+        <h1 class="uppercase text-9xl w-1/2">All my Logos</h1>
+        <div class="flex items-center justify-end gap-4 -mt-5 -mb-5">
+            <img src="/Flower.svg" alt="" class="object-contain h-12">
+            <img src="/sun.svg" alt="" class="object-contain h-12">
         </div>
         <div v-for="logo in data" class="w-full h-[28rem] border-t mt-10 flex justify-between gap-9 py-8">
             <div class="flex flex-col w-1/2 justify-end gap-4 ">

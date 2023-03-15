@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-
+        helveticaNeue : "HelveticaNeue, sans-serif",
+        helveticaNeueThin : "HelveticaNeueThin, sans-serif",
       },
       colors:{
         zblack: "#272727"
