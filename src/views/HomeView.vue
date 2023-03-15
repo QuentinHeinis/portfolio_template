@@ -37,6 +37,7 @@ onMounted(async () => {
         logos.value[i].image = url;
       })
   }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   // console.log(logos.value)
 })
 </script>
@@ -127,7 +128,8 @@ onMounted(async () => {
     <div class="flex flex-col items-end w-4/5 mx-auto md:-mt-5 lg:-mt-20" data-aos="fade-left" data-aos-delay="200"
       data-aos-duration="2000">
       <div class="w-1/2 ">
-        <p class="text-xs md:text-base font-helveticaNeueThin">IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO PRODUCE OTHER DESIGNS
+        <p class="text-xs md:text-base font-helveticaNeueThin">IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO
+          PRODUCE OTHER DESIGNS
           USING ADOBE
           ILLUSTRATOR TO SHOWCASE THE IDEAS AND CONCEPTS OF A BUSINESS, INDIVIDUAL, OR AS AN EXTENSION OF PROJECTS.</p>
         <div class="flex items-center gap-4 mt-4">

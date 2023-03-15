@@ -22,10 +22,6 @@ const router = createRouter({
     { path: '/logos', name: 'logos', component: LogosView },
     { path: '/project/:id', name: 'detail', component: projetDetailView },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    // always scroll to top
-    return { top: 0 }
-  },
 })
 
 export default router

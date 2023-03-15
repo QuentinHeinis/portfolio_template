@@ -18,7 +18,7 @@ onMounted(async () => {
                 data.value[i].images[0] = url;
             })
     }
-    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 })
 </script>
 <template>
