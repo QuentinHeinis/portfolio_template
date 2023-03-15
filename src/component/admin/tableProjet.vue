@@ -27,7 +27,7 @@ onMounted(async () => {
         await getDownloadURL(spaceRef)
             .then((url) => {
                 data.value[i].imagePres = url;
-                console.log(url)
+                // console.log(url)
             })
 
     }
