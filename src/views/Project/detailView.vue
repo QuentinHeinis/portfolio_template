@@ -30,7 +30,9 @@ onMounted(async () => {
             })
         // console.log(projet.value)
         var images = document.querySelectorAll('.image');
-        new simpleParallax(images);
+        new simpleParallax(images, {
+            scale: 1.2
+        });
         window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
         router.push('/')
