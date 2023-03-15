@@ -86,15 +86,17 @@ onMounted(async () => {
   </div>
   <div class="border-b pb-10 mb-10 relative w-full overflow-hidden">
     <div class="flex uppercase gap-10 md:gap-20 text-xs font-helveticaNeueThin mb-8 md:mb-0">
-      <div class="flex flex-col" data-aos="fade-right" data-aos-duration="1500">
-        <p>You can also see my other</p>
-        <p>project in the "projects" tab</p>
-        <p class="mt-2">my other creation can be</p>
-        <p>found all around the website</p>
-        <p>make sure to look at it !</p>
+      <div class="flex flex-col">
+        <div data-aos="fade-right" data-aos-duration="1500">
+          <p>You can also see my other</p>
+          <p>project in the "projects" tab</p>
+          <p class="mt-2">my other creation can be</p>
+          <p>found all around the website</p>
+          <p>make sure to look at it !</p>
+        </div>
         <div class="flex items-center gap-4 mt-4">
-          <img src="/Flower.svg" alt="" class="h-8 ">
-          <img src="/sun.svg" alt="" class="h-8">
+          <img src="/Flower.svg" alt="" class="h-8 " data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300">
+          <img src="/sun.svg" alt="" class="h-8" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="600">
         </div>
       </div>
       <div class="flex flex-col" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1500">
@@ -104,10 +106,10 @@ onMounted(async () => {
     </div>
     <span
       class="absolute bottom-1/4 lg:top-1/4 left-2/3 h-14 w-14 md:h-20 md:w-20 lg:h-32 lg:w-32 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full "
-      data-aos="zoom-in-left" data-aos-delay="150" data-aos-duration="1500"></span>
+      data-aos="zoom-in-left" data-aos-delay="450" data-aos-duration="1500"></span>
     <span
       class="absolute top-2/3 left-[40%] md:h-16 md:w-16 lg:h-24 lg:w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
-      data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1500"></span>
+      data-aos="zoom-in-left" data-aos-delay="800" data-aos-duration="1500"></span>
     <h2 class="text-5xl md:text-9xl lg:text-[10rem] uppercase leading-none text-end flex flex-col ">
       <span data-aos="fade-left"
           data-aos-duration="2000">Selected</span> <span data-aos="fade-left"
@@ -120,23 +122,25 @@ onMounted(async () => {
   </div>
   <div class="pb-10 mb-10 relative overflow-hidden">
     <span
-      class="absolute top-1/4 left-1/3 h-28 w-28 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
-      data-aos="zoom-in-right" data-aos-delay="300" data-aos-duration="2000"></span>
+      class="absolute top-1/4 left-1/4 h-20 w-20 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
+      data-aos="zoom-in-right" data-aos-delay="700" data-aos-duration="2000"></span>
     <h2 class="text-5xl md:text-9xl lg:text-[10rem] uppercase leading-none flex flex-col" >
       <span data-aos="fade-right"
         data-aos-duration="2000">Selected</span> <span data-aos="fade-right"
-        data-aos-duration="2000" data-aos-delay="500" class="lg:-mt-7">Logos</span>
+        data-aos-duration="2000" data-aos-delay="300" class="lg:-mt-7">Logos</span>
     </h2>
-    <div class="flex flex-col items-end w-4/5 mx-auto md:-mt-5 lg:-mt-20" data-aos="fade-left" data-aos-delay="200"
-      data-aos-duration="2000">
+    <div class="flex flex-col items-end w-4/5 mx-auto md:-mt-5 lg:-mt-20">
       <div class="w-1/2 ">
-        <p class="text-xs md:text-base font-helveticaNeueThin">IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO
+        <p class="text-xs md:text-base font-helveticaNeueThin"  data-aos="fade-left" data-aos-delay="200"
+        data-aos-duration="2000">IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO
           PRODUCE OTHER DESIGNS
           USING ADOBE
           ILLUSTRATOR TO SHOWCASE THE IDEAS AND CONCEPTS OF A BUSINESS, INDIVIDUAL, OR AS AN EXTENSION OF PROJECTS.</p>
         <div class="flex items-center gap-4 mt-4">
-          <img src="/Flower.svg" alt="" class="h-8 ">
-          <img src="/sun.svg" alt="" class="h-8">
+          <img src="/Flower.svg" alt="" class="h-8 "  data-aos="fade-left" data-aos-delay="400"
+        data-aos-duration="2000">
+          <img src="/sun.svg" alt="" class="h-8"  data-aos="fade-left" data-aos-delay="600"
+        data-aos-duration="2000">
         </div>
       </div>
 
