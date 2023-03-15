@@ -24,8 +24,8 @@ let show = ref(false)
             <div class="w-1/2">
                 <p class="text-end">{{ smallDesc }}</p>
             </div>
-            <div class="absolute top-[90%] right-0 text-2xl cursor-pointer" @click="show = !show" v-if="!show">+</div>
-            <div class="absolute top-[90%] right-0 text-2xl cursor-pointer" @click="show = !show" v-if="show">-</div>
+            <div class="absolute top-[90%] right-0 text-2xl hover:text-3xl cursor-pointer" @click="show = !show" v-if="!show">+</div>
+            <div class="absolute top-[90%] right-0 text-2xl hover:text-3xl cursor-pointer" @click="show = !show" v-if="show">-</div>
         </div>
         <div v-if="show" class="max-w-lg py-3 border-b-2">{{ largeDesc }}</div>
     </div>

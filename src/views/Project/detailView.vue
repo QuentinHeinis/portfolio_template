@@ -66,8 +66,8 @@ onMounted(async () => {
             <img :src="image" alt="" class="image">
         </div>
         <RouterLink to="/project"
-            class="flex w-fit gap-4 text-2xl md:text-6xl items-center self-end pr-10 pt-8 mb-10 uppercase">
-            <img src="/ArrowBack.png" alt="" class="h-9 md:h-auto"> Back to project
+            class="flex w-fit gap-4 text-2xl md:text-6xl items-center self-end pr-10 pt-8 mb-10 uppercase cursor-pointer hover:underline">
+            <img src="/ArrowBack.png" alt="" class="h-9 md:h-auto"> Back to projects
         </RouterLink>
     </div>
 </template>

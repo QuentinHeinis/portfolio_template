@@ -55,7 +55,7 @@ const setIshomepage = async (id, value) => {
 
         <div class="flex flex-col">
             <h1 class="text-center text-2xl">Logos</h1>
-            <RouterLink to="/admin/addL" class="mb-4">ajouter</RouterLink>
+            <RouterLink to="/admin/addL" class="mb-4 cursor-pointer">ajouter</RouterLink>
             <table className='mx-auto max-w-full'>
                 <thead className='h-14'>
                     <tr>

@@ -29,16 +29,16 @@ onMounted(async () => {
             <img src="/sun.svg" alt="" class="object-contain h-5 md:h-12">
         </div>
         <div v-for="projet in data" class="w-full h-[28rem] border-t mt-10 flex flex-wrap justify-between gap-9 py-8">
-            <RouterLink :to="'/project/' + projet.id" class="flex flex-col w-1/2 md:justify-end gap-4 ">
+            <RouterLink :to="'/project/' + projet.id" class="flex flex-col w-1/2 md:justify-end gap-4 cursor-pointer">
                 <div class="flex gap-2 text-xs md:text-base lg:text-lg">
                     <p v-for="tag in projet.tags"
                         class="px-2 py-[2px] uppercase flex items-center border rounded-full font-helveticaNeueThin">{{ tag
                         }}</p>
                 </div>
-                <h2 class="text-2xl md:text-5xl lg:text-6xl xl:text-7xl uppercase">{{ projet.nom }}</h2>
+                <h2 class="hover__effect relative text-2xl md:text-5xl lg:text-6xl xl:text-7xl uppercase w-fit ">{{ projet.nom }}</h2>
             </RouterLink>
-            <RouterLink :to="'/project/' + projet.id" class="w-full h-72 md:h-auto md:w-2/5">
-                <img :src="projet.images[0]" alt="" class="object-cover w-full h-full">
+            <RouterLink :to="'/project/' + projet.id" class="w-full h-72 md:h-auto md:w-2/5 cursor-pointer overflow-hidden">
+                <img :src="projet.images[0]" alt="" class="object-cover w-full h-full hover:scale-125 transition-all duration-1000">
             </RouterLink>
         </div>
     </div>

@@ -7,11 +7,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        helveticaNeue : "HelveticaNeue, sans-serif",
-        helveticaNeueThin : "HelveticaNeueThin, sans-serif",
+        helveticaNeue: "HelveticaNeue, sans-serif",
+        helveticaNeueThin: "HelveticaNeueThin, sans-serif",
       },
-      colors:{
+      colors: {
         zblack: "#272727"
+      },
+      cursor: {
+        'pointer': 'none',
+      },
+      backgroundPosition: {
+        hover: "50% 60%"
       }
     },
   },

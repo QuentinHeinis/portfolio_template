@@ -30,45 +30,13 @@ window.onscroll = function () {
 </script>
 <template>
     <header class="text-white py-3 border-b mx-3 px-3 flex justify-between items-center fixed top-0 left-0 right-0">
-        <RouterLink to="/" class="hover__effect relative z-10">eden</RouterLink>
+        <RouterLink to="/" class="hover__effect relative z-10 cursor-pointer">eden</RouterLink>
         <div class="flex gap-4 uppercase text-xs md:text-base items-center">
-            <RouterLink to="/Project" class="hover__effect relative z-10">All Projects</RouterLink>
-            <RouterLink to="/Logos" class="hover__effect relative z-10">All Logos</RouterLink>
+            <RouterLink to="/Project" class="hover__effect relative z-10 cursor-pointer">All Projects</RouterLink>
+            <RouterLink to="/Logos" class="hover__effect relative z-10 cursor-pointer">All Logos</RouterLink>
         </div>
     </header>
 </template>
 <style>
-header {
-    transition: all 0.3s ease-in-out;
-    z-index: 100;
-}
 
-header.fixedToTop {
-    position: fixed;
-    background: #272727;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.hover__effect::after {
-    content: "";
-    position: absolute;
-    background: white;
-    display: block;
-    left: 0;
-    width: 100%;
-    border-radius: 0.5rem;
-    height: 2px;
-    z-index: -1;
-    transition: transform .7s ease;
-    /* Initial state */
-    transform: scaleX(0);
-    transform-origin: bottom right;
-}
-
-.hover__effect:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
 </style>

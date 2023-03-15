@@ -10,7 +10,7 @@ defineProps({
 
 <template>
     <RouterLink :to="'/project/' + id"
-        class="h-96 lg:h-[28rem]   flex flex-col items-center justify-center relative w-full overflow-hidden bg-fixed bg-center"
+        class="h-96 lg:h-[28rem] cursor-pointer  flex flex-col items-center justify-center relative w-full hover:bg-hover transition-all duration-1000 overflow-hidden bg-fixed bg-center"
         :style="{ backgroundImage: `url(${image})` }">
         <div class="z-10 bg-black bg-opacity-70 flex flex-col items-center justify-center relative w-full h-full gap-10">
             <div class="marquee text-5xl md:text-7xl lg:text-9xl uppercase ">
@@ -33,7 +33,9 @@ defineProps({
                 <span aria-hidden class="ml-10 md:ml-20 uppercase">{{ nom }}</span>
             </div>
             <div class="flex gap-4 text-xs md:text-base flex-wrap justify-center">
-                <p v-for="tag in tags" class="px-4 py-2 border border-white rounded-full leading-none uppercase font-helveticaNeueThin">{{ tag }}
+                <p v-for="tag in tags"
+                    class="px-4 py-2 border border-white rounded-full leading-none uppercase font-helveticaNeueThin">{{ tag
+                    }}
                 </p>
             </div>
         </div>
@@ -65,5 +67,4 @@ defineProps({
     100% {
         transform: translate3d(-40%, 0, 0);
     }
-}
-</style>
+}</style>
