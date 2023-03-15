@@ -17,7 +17,7 @@ import Header from './component/layout/Header.vue';
 </script>
 <template>
   <Header />
-  <main class="text-white min-h-screen mx-3">
+  <main class="text-white min-h-screen mx-3 pt-12">
     <!-- <span ref="cursor" id="cursor"></span> -->
     <RouterView />
   </main>

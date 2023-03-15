@@ -29,7 +29,7 @@ onMounted(async () => {
                 projet.value.imagePres = url;
             })
         // console.log(projet.value)
-        var images = document.querySelectorAll('img');
+        var images = document.querySelectorAll('.image');
         new simpleParallax(images);
 
     } else {
@@ -42,7 +42,7 @@ onMounted(async () => {
     <div class="flex flex-col">
         <h1 class="text-5xl md:text-9xl uppercase py-10">{{ projet.nom }}</h1>
         <div class="pb-10 border-b">
-            <img :src="projet.imagePres" alt="">
+            <img :src="projet.imagePres" alt="" class="image">
 
         </div>
         <div class="border-l max-w-xs flex flex-col gap-2 pl-2 mt-10 ">
@@ -61,7 +61,7 @@ onMounted(async () => {
             </div>
         </div>
         <div v-for="image in projet.images" class="mt-16">
-            <img :src="image" alt="">
+            <img :src="image" alt="" class="image">
         </div>
         <RouterLink to="/project"
             class="flex w-fit gap-4 text-2xl md:text-6xl items-center self-end pr-10 pt-8 mb-10 uppercase">
