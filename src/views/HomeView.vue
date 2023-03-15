@@ -43,20 +43,20 @@ onMounted(async () => {
 
 <template>
   <div class="border-b pb-10 mb-10 relative">
-    <span class="absolute top-1/4 left-2/3 h-32 w-32 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full "
+    <span class="absolute top-1/4 left-2/3 h-32 w-32 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full  hidden md:flex"
       data-aos="zoom-in-left" data-aos-delay="600" data-aos-duration="2000"></span>
-    <span class="absolute top-1/3 left-1/4 h-24 w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full"
+    <span class="absolute top-1/3 left-1/4 h-24 w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
       data-aos="zoom-in-left" data-aos-delay="400" data-aos-duration="2000"></span>
-    <h1 class="flex flex-col text-9xl uppercase font-semibold">
+    <h1 class="flex flex-col text-2xl md:text-6xl lg:text-8xl xl:text-9xl uppercase font-semibold">
       <span class="flex" data-aos="fade-up" data-aos-duration="2000">Web design</span>
-      <span class="flex items-center -mt-10" data-aos="fade-up" data-aos-delay="150" data-aos-duration="2000">Graphic
-        d<img src="/ball.png" class="-mx-12 h-56" />sign</span>
-      <span class="flex items-center -mt-10" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">Log
-        <img src="/QanticLogo.png" class="h-28" />s</span>
+      <span class="flex items-center lg:-mt-12" data-aos="fade-up" data-aos-delay="150" data-aos-duration="2000">Graphic
+        d<img src="/ball.png" class="-mx-2 md:-mx-6 lg:-mx-12 xl:-mx-14 h-10 md:h-24 lg:h-44 xl:h-56" />sign</span>
+      <span class="flex items-center lg:-mt-12" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">Log
+        <img src="/QanticLogo.png" class="h-5 md:h-14 lg:h-20 xl:h-24" />s</span>
       <span class="flex" data-aos="fade-up" data-aos-delay="450" data-aos-duration="2000">Product</span>
     </h1>
     <div class="flex">
-      <div class="flex uppercase gap-7 text-xs font-helveticaNeueThin">
+      <div class="uppercase gap-9 text-xs font-helveticaNeueThin hidden lg:flex">
         <div class="flex flex-col" data-aos="fade-right" data-aos-delay="600" data-aos-duration="2000">
           <p>French graphic designer</p>
           <p>Based in France</p>
@@ -75,14 +75,14 @@ onMounted(async () => {
           <p>premiere, figma</p>
         </div>
       </div>
-      <div class="text-9xl -mt-8 uppercase font-semibold" data-aos="fade-left" data-aos-delay="1050"
+      <div class="text-2xl md:text-6xl lg:text-8xl xl:text-9xl lg:-mt-8 uppercase font-semibold" data-aos="fade-left" data-aos-delay="1050"
         data-aos-duration="2000">
         Design
       </div>
     </div>
   </div>
   <div class="border-b pb-10 mb-10 relative w-full overflow-hidden">
-    <div class="flex uppercase gap-20 text-xs font-helveticaNeueThin">
+    <div class="flex uppercase gap-10 md:gap-20 text-xs font-helveticaNeueThin mb-8 md:mb-0">
       <div class="flex flex-col" data-aos="fade-right" data-aos-duration="1500">
         <p>You can also see my other</p>
         <p>project in the "projects" tab</p>
@@ -99,11 +99,11 @@ onMounted(async () => {
         <p>section are from 2022 & 2023</p>
       </div>
     </div>
-    <span class="absolute top-1/4 left-2/3 h-32 w-32 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full "
+    <span class="absolute bottom-1/4 lg:top-1/4 left-2/3 h-14 w-14 md:h-20 md:w-20 lg:h-32 lg:w-32 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full "
       data-aos="zoom-in-left" data-aos-delay="150" data-aos-duration="1500"></span>
-    <span class="absolute top-2/3 left-[40%] h-24 w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full"
+    <span class="absolute top-2/3 left-[40%] md:h-16 md:w-16 lg:h-24 lg:w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
       data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="1500"></span>
-    <h2 class="text-[12rem] uppercase leading-none text-end flex flex-col" data-aos="fade-left" data-aos-duration="1500">
+    <h2 class="text-5xl md:text-9xl lg:text-[10rem] uppercase leading-none text-end flex flex-col" data-aos="fade-left" data-aos-duration="1500">
       Selected <span>Projects</span>
     </h2>
   </div>
@@ -112,15 +112,15 @@ onMounted(async () => {
       :id="projet.id" />
   </div>
   <div class="pb-10 mb-10 relative">
-    <span class="absolute top-1/4 left-1/3 h-28 w-28 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full "
+    <span class="absolute top-1/4 left-1/3 h-28 w-28 bg-white bg-opacity-30 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
       data-aos="zoom-in-right" data-aos-delay="300" data-aos-duration="2000"></span>
-    <h2 class="text-[12rem] uppercase leading-none flex flex-col" data-aos="fade-right" data-aos-duration="2000">
+    <h2 class="text-5xl md:text-9xl lg:text-[10rem] uppercase leading-none flex flex-col" data-aos="fade-right" data-aos-duration="2000">
       Selected <span>Logos</span>
     </h2>
-    <div class="flex flex-col items-end w-4/5 mx-auto -mt-20" data-aos="fade-left" data-aos-delay="200"
+    <div class="flex flex-col items-end w-4/5 mx-auto md:-mt-5 lg:-mt-20" data-aos="fade-left" data-aos-delay="200"
       data-aos-duration="2000">
       <div class="w-1/2 ">
-        <p>IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO PRODUCE OTHER DESIGNS USING ADOBE
+        <p class="text-xs md:text-base">IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO PRODUCE OTHER DESIGNS USING ADOBE
           ILLUSTRATOR TO SHOWCASE THE IDEAS AND CONCEPTS OF A BUSINESS, INDIVIDUAL, OR AS AN EXTENSION OF PROJECTS.</p>
           <div class="flex items-center gap-4 mt-4">
             <img src="/Flower.svg" alt="" class="h-8 ">

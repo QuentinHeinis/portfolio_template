@@ -30,9 +30,9 @@ window.onscroll = function () {
 }
 </script>
 <template>
-    <header class="text-white py-3 border-b mx-3 px-3 flex justify-between ">
+    <header class="text-white py-3 border-b mx-3 px-3 flex justify-between items-center ">
         <RouterLink to="/" class="hover__effect relative z-10">eden</RouterLink>
-        <div class="flex gap-4 uppercase">
+        <div class="flex gap-4 uppercase text-xs md:text-base items-center">
             <RouterLink to="/Project" class="hover__effect relative z-10">All Projects</RouterLink>
             <RouterLink to="/Logos" class="hover__effect relative z-10">All Logos</RouterLink>
         </div>
@@ -40,7 +40,7 @@ window.onscroll = function () {
 </template>
 <style>
 header {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     z-index: 100;
 }
 
