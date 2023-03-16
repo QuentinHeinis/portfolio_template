@@ -12,6 +12,7 @@
 }
 
 #cursor {
+    display: none;
     position: fixed;
     z-index: 1000;
     transition: all .05s;
@@ -22,8 +23,13 @@
     background: white;
     border-radius: 50%;
 }
+@media (min-width: 640px) {
+    #cursor{
+        display: flex;
+    }
+}
 
-a{
+a {
     cursor: none;
 }
 
