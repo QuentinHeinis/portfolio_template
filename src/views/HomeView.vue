@@ -1,5 +1,5 @@
 <script setup>
-import { collection, getDocs, getFirestore, query, where } from '@firebase/firestore';
+import { collection, getDocs, getFirestore, orderBy, query, where } from '@firebase/firestore';
 import { onMounted, ref } from 'vue';
 import HomeCardProjet from '@/component/HomeCardProjet.vue'
 import HomeCardLogo from '@/component/HomeCardLogo.vue'
@@ -24,7 +24,7 @@ onMounted(async () => {
         data.value[i].imagePres = url;
       })
   }
-  q = query(collection(firestore, "logos"), where("IsHomepage", "==", true))
+  q = query(collection(firestore, "logos"), orderBy('numero'), where("IsHomepage", "==", true))
   const querySnapshotL = await getDocs(q);
   querySnapshotL.forEach((doc) => {
     logos.value.push({ id: doc.id, ...doc.data() })
@@ -111,9 +111,8 @@ onMounted(async () => {
       class="absolute top-2/3 left-[40%] md:h-16 md:w-16 lg:h-24 lg:w-24 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
       data-aos="zoom-in-left" data-aos-delay="800" data-aos-duration="1500"></span>
     <h2 class="text-5xl md:text-9xl lg:text-[10rem] uppercase leading-none text-end flex flex-col ">
-      <span data-aos="fade-left"
-          data-aos-duration="2000">Selected</span> <span data-aos="fade-left"
-          data-aos-duration="2000" data-aos-delay="500" class="lg:-mt-7">Projects</span>
+      <span data-aos="fade-left" data-aos-duration="2000">Selected</span> <span data-aos="fade-left"
+        data-aos-duration="2000" data-aos-delay="500" class="lg:-mt-7">Projects</span>
     </h2>
   </div>
   <div class="flex flex-col gap-6 mb-6 ">
@@ -124,23 +123,20 @@ onMounted(async () => {
     <span
       class="absolute top-1/4 left-1/4 h-20 w-20 bg-white bg-opacity-5 backdrop-blur-md z-10 border-2 rounded-full hidden md:flex"
       data-aos="zoom-in-right" data-aos-delay="700" data-aos-duration="2000"></span>
-    <h2 class="text-5xl md:text-9xl lg:text-[10rem] uppercase leading-none flex flex-col" >
-      <span data-aos="fade-right"
-        data-aos-duration="2000">Selected</span> <span data-aos="fade-right"
+    <h2 class="text-5xl md:text-9xl lg:text-[10rem] uppercase leading-none flex flex-col">
+      <span data-aos="fade-right" data-aos-duration="2000">Selected</span> <span data-aos="fade-right"
         data-aos-duration="2000" data-aos-delay="300" class="lg:-mt-7">Logos</span>
     </h2>
     <div class="flex flex-col items-end w-4/5 mx-auto md:-mt-5 lg:-mt-20">
       <div class="w-1/2 ">
-        <p class="text-xs md:text-base font-helveticaNeueThin"  data-aos="fade-left" data-aos-delay="200"
-        data-aos-duration="2000">IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO
+        <p class="text-xs md:text-base font-helveticaNeueThin" data-aos="fade-left" data-aos-delay="200"
+          data-aos-duration="2000">IN ADDITION TO THE CONSTRUCTED PROJECTS I EXECUTE, I ALSO
           PRODUCE OTHER DESIGNS
           USING ADOBE
           ILLUSTRATOR TO SHOWCASE THE IDEAS AND CONCEPTS OF A BUSINESS, INDIVIDUAL, OR AS AN EXTENSION OF PROJECTS.</p>
         <div class="flex items-center gap-4 mt-4">
-          <img src="/Flower.svg" alt="" class="h-8 "  data-aos="fade-left" data-aos-delay="400"
-        data-aos-duration="2000">
-          <img src="/sun.svg" alt="" class="h-8"  data-aos="fade-left" data-aos-delay="600"
-        data-aos-duration="2000">
+          <img src="/Flower.svg" alt="" class="h-8 " data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000">
+          <img src="/sun.svg" alt="" class="h-8" data-aos="fade-left" data-aos-delay="600" data-aos-duration="2000">
         </div>
       </div>
 
