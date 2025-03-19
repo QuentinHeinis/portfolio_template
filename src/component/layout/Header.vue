@@ -30,7 +30,7 @@ window.onscroll = function () {
 </script>
 <template>
     <header class="text-white py-3 border-b mx-3 px-3 flex justify-between items-center fixed top-0 left-0 right-0">
-        <RouterLink to="/" class="hover__effect relative z-10 cursor-pointer">eden</RouterLink>
+        <RouterLink to="/" class="hover__effect relative z-10 cursor-pointer">suihira</RouterLink>
         <div class="flex gap-4 uppercase text-xs md:text-base items-center">
             <RouterLink to="/Project" class="hover__effect relative z-10 cursor-pointer">All Projects</RouterLink>
             <RouterLink to="/Logos" class="hover__effect relative z-10 cursor-pointer">All Logos</RouterLink>
