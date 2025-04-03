@@ -35,11 +35,11 @@ onMounted(() => {
       >suihira</NuxtLink
     >
     <div class="flex gap-4 uppercase text-xs md:text-base items-center">
-      <NuxtLink to="/project" class="hover__effect relative z-10 cursor-pointer"
-        >All Projects</NuxtLink
+      <NuxtLink to="/projet" class="hover__effect relative z-10 cursor-pointer"
+        >Projets</NuxtLink
       >
       <NuxtLink to="/logos" class="hover__effect relative z-10 cursor-pointer"
-        >All Logos</NuxtLink
+        >Logos</NuxtLink
       >
     </div>
   </header>
