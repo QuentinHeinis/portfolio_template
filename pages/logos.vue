@@ -13,7 +13,7 @@ onMounted(() => {
     <h1
       class="uppercase text-4xl md:text-6xl lg:text-8xl xl:text-9xl w-1/3 pt-4"
     >
-      All my Logos
+      Tous mes Logos
     </h1>
     <div class="flex items-center justify-end gap-4 -mt-5 -mb-5">
       <img src="/Flower.svg" alt="" class="object-contain h-5 md:h-12" />
